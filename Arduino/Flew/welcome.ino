@@ -3,10 +3,11 @@
 ///////////////////////////////////////////////////////////////////////////
 int s_welcome_0   = 100;
 int fade_welcome_0 = 3;
-void welcome_0(int n) {
+void welcome_0(long n) {
   if (millis() - t < s_welcome_0) {
     return;
   }
+ 
   if (prev == 0) {
     f = 0;
   } else if (prev == 2) {
@@ -19,13 +20,16 @@ void welcome_0(int n) {
   }
   fade_circle_out(f - fade_welcome_0, fade_welcome_0);
 
+  transition = true;
   int circle_count = map(n, low_threshold, high_threshold, 0, 32+fade_welcome_0);
   if (f < circle_count) {
     f++;
   } else if (f > circle_count) {
     f--;
+  } 
+  if (f <= 0 || f >= 32 + fade_welcome_0){
+    transition = false;
   }
-
   prev = 1;
   t = millis();
   out();
@@ -36,7 +40,7 @@ void welcome_0(int n) {
 int s_welcome_1   = 100;
 int center_welcome_1 = 3;
 int fade_welcome_1 = 3;
-void welcome_1(int n) {
+void welcome_1(long n) {
   if (millis() - t < s_welcome_1) {
     return;
   }
@@ -70,7 +74,7 @@ void welcome_1(int n) {
 // Spiral fills up sideways based on the amount of people present //
 ////////////////////////////////////////////////////////////////////
 int s_welcome_2   = 100;
-void welcome_2(int n) {
+void welcome_2(long n) {
   if (millis() - t < s_welcome_2) {
     return;
   }

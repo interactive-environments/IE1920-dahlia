@@ -25,7 +25,7 @@ class TrackerDepth(object):
         # CmdMessenger init
         arduino = cmd.ArduinoBoard("COM8", baud_rate=9600)
         commands = [["coords", "i*"],
-                    ["num", "i"],
+                    ["num", "l"],
                     ["unblock", ""]]
         self.c = cmd.CmdMessenger(arduino, commands)
 
@@ -55,6 +55,7 @@ class TrackerDepth(object):
 
     def sendNum(self):
         self.c.send("num", len(self.data))
+        # print(len(self.data))
         block = self.c.receive()
         while (block == None):
             block = self.c.receive()

@@ -65,9 +65,9 @@ void setup() {
 }
 
 void loop() {
-//  c.feedinSerialData();
+  c.feedinSerialData();
 //  idle_0();
-  idle_1();
+//  idle_1();
 //  idle_2();
 //  celebrate_0();
 //  celebrate_1();

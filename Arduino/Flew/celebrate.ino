@@ -9,14 +9,36 @@ void celebrate_0(void) {
     return;
   }
 
-  int i = f - fade_celebrate_0;
+  int i = f - (center_celebrate_0 + fade_celebrate_0) ;
   
   set_all(background);
-  for (int j = i; j > i-center_celebrate_0; j--) {
+  for (int j = i; j < i+center_celebrate_0; j++) {
     set_circle(j, color);
   }
-  fade_circle_out(i, fade_celebrate_0);
-  fade_circle_in(i-center_celebrate_0, fade_celebrate_0);
+  fade_circle_out(i+center_celebrate_0, fade_celebrate_0);
+  fade_circle_in(i, fade_celebrate_0);
+  
+  prev = 2;
+  f++;
+  if (f >= 32 + center_celebrate_0 + 2*fade_celebrate_0) {
+    f = 0;
+  }
+  t = millis();
+  out();
+}
+void celebrate_0_inv(void) {
+  if (millis() - t < s_celebrate_0) {
+    return;
+  }
+
+  int i = f - (center_celebrate_0 + fade_celebrate_0) ;
+  
+  set_all(color);
+  for (int j = i; j < i+center_celebrate_0; j++) {
+    set_circle(j, background);
+  }
+  fade_circle_out(i-fade_celebrate_0, fade_celebrate_0);
+  fade_circle_in(i+center_celebrate_0+fade_celebrate_0, fade_celebrate_0);
   
   prev = 2;
   f++;

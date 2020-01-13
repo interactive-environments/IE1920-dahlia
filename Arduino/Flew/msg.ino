@@ -12,7 +12,7 @@ int parseCoords(int n, int data[][2]) {
 }
 
 void onNum(void) {
-  int n = c.readBinArg<int>();
+  long n = c.readBinArg<int>();
   animate(n);
 }
 

@@ -18,18 +18,27 @@ uint32_t color      = leds_1.Color(color_r, color_g, color_b);
 ////////////////////////////
 // Pixel count thresholds //
 //////////////////////////// 
-int low_threshold = 14000;
-int high_threshold = 20000;
+int low_threshold = 25000;
+int high_threshold = 30000;
 ////////////////
 // Animations //
 ////////////////
-void animate(int n) {
+bool transition = false;
+void animate(long n) {
   if (n < low_threshold) {
-    idle_2();
+    if (transition) {
+      welcome_0(n);
+    } else {
+      idle_1();
+    }
   } else if (n < high_threshold) {
-    welcome_2(n);
+    welcome_0(n);
   } else {
-    celebrate_2();
+    if (transition) {
+      welcome_0(n);
+    } else {
+      celebrate_0_inv();
+    }
   }
   c.sendCmd(unblock);
 }
