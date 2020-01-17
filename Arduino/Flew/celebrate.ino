@@ -3,49 +3,53 @@
 ///////////////////////////////
 int s_celebrate_0 = 50;
 int center_celebrate_0 = 3;
-int fade_celebrate_0 = 3;
+int fade_in_celebrate_0 = 3;
+int fade_out_celebrate_0 = 8;
 void celebrate_0(void) {
-  if (millis() - t < s_celebrate_0) {
+  if (millis() - t_celebrate < s_celebrate_0) {
     return;
   }
-
-  int i = f - (center_celebrate_0 + fade_celebrate_0) ;
+  if (prev == 1) {
+    f = 0; 
+  }
+  
+  int i = f - (center_celebrate_0 + fade_out_celebrate_0) ;
   
   set_all(background);
   for (int j = i; j < i+center_celebrate_0; j++) {
     set_circle(j, color);
   }
-  fade_circle_out(i+center_celebrate_0, fade_celebrate_0);
-  fade_circle_in(i, fade_celebrate_0);
+  fade_circle_out(i+center_celebrate_0, fade_out_celebrate_0);
+  fade_circle_in(i, fade_in_celebrate_0);
   
   prev = 2;
   f++;
-  if (f >= 32 + center_celebrate_0 + 2*fade_celebrate_0) {
+  if (f >= 32 + center_celebrate_0 + fade_in_celebrate_0 + fade_out_celebrate_0) {
     f = 0;
   }
-  t = millis();
+  t_celebrate = millis();
   out();
 }
 void celebrate_0_inv(void) {
-  if (millis() - t < s_celebrate_0) {
+  if (millis() - t_celebrate < s_celebrate_0) {
     return;
   }
 
-  int i = f - (center_celebrate_0 + fade_celebrate_0) ;
+  int i = f - (center_celebrate_0 + fade_in_celebrate_0) ;
   
   set_all(color);
   for (int j = i; j < i+center_celebrate_0; j++) {
     set_circle(j, background);
   }
-  fade_circle_out(i-fade_celebrate_0, fade_celebrate_0);
-  fade_circle_in(i+center_celebrate_0+fade_celebrate_0, fade_celebrate_0);
+  fade_circle_out(i-fade_in_celebrate_0, fade_in_celebrate_0);
+  fade_circle_in(i+center_celebrate_0+fade_out_celebrate_0, fade_out_celebrate_0);
   
   prev = 2;
   f++;
-  if (f >= 32 + center_celebrate_0 + 2*fade_celebrate_0) {
+  if (f >= 32 + center_celebrate_0 + fade_in_celebrate_0 + fade_out_celebrate_0) {
     f = 0;
   }
-  t = millis();
+  t_celebrate = millis();
   out();
 }
 ///////////////////////////
@@ -53,9 +57,9 @@ void celebrate_0_inv(void) {
 ///////////////////////////
 int s_celebrate_1 = 1;
 bool color_celebrate_1 = true;
-int spirals_celebrate_1 = 4;
+int spirals_celebrate_1 = 8;
 void celebrate_1(void) {
-  if (millis() - t < s_celebrate_1) {
+  if (millis() - t_celebrate < s_celebrate_1) {
     return;
   }
   if (prev != 2) {
@@ -80,15 +84,15 @@ void celebrate_1(void) {
     f = 0;
     color_celebrate_1 = !color_celebrate_1;
   }
-  t = millis();
+  t_celebrate = millis();
   out();
 }
 ///////////////////
 // Rotating arms //
 ///////////////////
-int s_celebrate_2 = 50;
+int s_celebrate_2 = 100;
 void celebrate_2() {
-  if (millis() - t < s_celebrate_2) {
+  if (millis() - t_celebrate < s_celebrate_2) {
     return;
   }
 
@@ -104,6 +108,6 @@ void celebrate_2() {
   if (f > arm_space - 1) {
     f = 0;
   }
-  t = millis();
+  t_celebrate = millis();
   out();
 }

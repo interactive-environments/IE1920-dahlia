@@ -6,7 +6,7 @@ int len_idle_0 = 3;
 int lim_idle_0 = 9;
 ///////////////////////////////////////
 void idle_0(void) {
-  if (millis() - t < s_idle_0) {
+  if (millis() - t_idle < s_idle_0) {
     return;
   }
   
@@ -22,7 +22,7 @@ void idle_0(void) {
   if (f > 2*lim_idle_0 - 1) {
     f = 0;
   }
-  t = millis();
+  t_idle = millis();
   out();
 }
 //////////////////////////////
@@ -30,27 +30,31 @@ void idle_0(void) {
 //////////////////////////////
 int s_idle_1 = 50;
 int center_idle_1 = 3;
-int fade_idle_1 = 3;
+int fade_in_idle_1 = 3;
+int fade_out_idle_1 = 8;
 void idle_1(void) {
-  if (millis() - t < s_idle_1) {
+  if (millis() - t_idle < s_idle_1) {
     return;
   }
+  if (prev == 1) {
+    f = 0;
+  }
   
-  int i = 31 - f + fade_idle_1;
+  int i = 31 - f + fade_in_idle_1;
 
   set_all(background);
   for (int j = i; j < i+center_idle_1; j++) {
     set_circle(j, color);
   }
-  fade_circle_out(i+center_idle_1, fade_idle_1+10);
-  fade_circle_in(i, fade_idle_1);
+  fade_circle_out(i+center_idle_1, fade_out_idle_1);
+  fade_circle_in(i, fade_in_idle_1);
   
   prev = 0;
   f++;
-  if (f >= 32 + center_idle_1 + 2*fade_idle_1+10) {
+  if (f >= 32 + center_idle_1 + fade_in_idle_1 + fade_out_idle_1) {
     f = 0;
   }
-  t = millis();
+  t_idle = millis();
   out();
 }
 //////////////////////////
@@ -60,7 +64,7 @@ int s_idle_2 = 50;
 int len_idle_2 = 8;
 int color_idle_2 = true;
 void idle_2(void) {
-  if (millis() - t < s_idle_2) {
+  if (millis() - t_idle < s_idle_2) {
     return;
   }
   if (prev != 0) {
@@ -89,6 +93,6 @@ void idle_2(void) {
     f = 0;
     color_idle_2 = !color_idle_2;
   }
-  t = millis();
+  t_idle = millis();
   out();
 }
