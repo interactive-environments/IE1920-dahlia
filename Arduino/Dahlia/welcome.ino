@@ -130,29 +130,64 @@ void welcome_2(long n) {
 }
 
 void sweep(void) {
-  for (int i = -3; i < 24 ; i++) {
+  for (int i = 0; i < 24 + 2*fade_welcome_2; i++) {
     set_all(color);
-    for (int j = 0; j < i; j++) {
-       set_arm(j, background);
-    }
-    if (i <= 0) {
-      for (int j = 0; j < fade_welcome_2+i; j++) {
-        uint32_t fade = get_fade(fade_welcome_2 + i - j + 1, fade_welcome_2);
+    if (i < 2*fade_welcome_2) {
+      for (int j = 0; j <= floor(i/2); j++) {
+        uint32_t fade = get_fade(j+1, fade_welcome_2);
         set_arm(j, fade);
-        set_arm(-j, fade);
+        set_arm(i-j, fade);
       }
-    }
-    else if (i < 24 - fade_welcome_2) {
-      fade_arm_left(-fade_welcome_2, fade_welcome_2);
-      fade_arm_right(i+fade_welcome_2, fade_welcome_2);    
+    } else if (i < 24) {
+      for (int j = fade_welcome_2; j < i - fade_welcome_2; j++) {
+         set_arm(j, background);
+      }
+      fade_arm_left(-1, fade_welcome_2);
+      fade_arm_right(i, fade_welcome_2);
     } else {
-      for (int j = 0; j <= ceil((24 - f_welcome_2)/2); j++) {
-        uint32_t fade = get_fade(fade_welcome_2 + i - j + 1, fade_welcome_2);
-        set_arm(i + j, fade);
-        set_arm(-j, fade);
+      
+      for (int j = fade_welcome_2+(24-i); j < 24 - fade_welcome_2; j++) {
+        set_arm 
       }
     }
+//      for (int j = 0; j < i - ; j++) {
+//        set_arm(j, background);
+//      }
+//      for (int j = 0; j <= floor((24 + 4*fade_welcome_2 - i)/2); j++) {
+//        uint32_t fade = get_fade(fade_welcome_2 - j, fade_welcome_2);
+//        set_arm(i+j, fade);
+//        set_arm(24 + 4*fade_welcome_2-j, fade);
+//      }
+//    }
     out();
     delay(s_welcome_2);
+//    if (i == 24 + 2*fade_welcome_2 - fade_welcome_2 -1){
+//      delay(2000);
+//    }
   }
+  
+  
+  
+   
+//  for (int i = -3; i < 24 ; i++) {
+//    set_all(color);
+//    
+//    if (i <= 0) {
+//      for (int j = 0; j < fade_welcome_2+i; j++) {
+//        
+//        set_arm(j, fade);
+//        set_arm(-j, fade);
+//      }
+//    }
+//    else if (i < 24 - fade_welcome_2) {
+//      fade_arm_left(-fade_welcome_2, fade_welcome_2);
+//      fade_arm_right(i+fade_welcome_2, fade_welcome_2);    
+//    } else {
+//      for (int j = 0; j <= ceil((24 - f_welcome_2)/2); j++) {
+//        uint32_t fade = get_fade(fade_welcome_2 + i - j + 1, fade_welcome_2);
+//        set_arm(i + j, fade);
+//        set_arm(-j, fade);
+//      }
+//    }
+  
 }

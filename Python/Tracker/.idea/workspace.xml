@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c04915d-e9f2-4f32-ae5d-5065ec193f0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Arduino/Flew/animate.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Arduino/Flew/animate.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Arduino/Flew/celebrate.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Arduino/Flew/celebrate.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Arduino/Flew/fade.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Arduino/Flew/fade.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Arduino/Flew/idle.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Arduino/Flew/idle.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Arduino/Flew/welcome.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Arduino/Flew/welcome.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,6 +175,7 @@
       <workItem from="1578993186943" duration="1218000" />
       <workItem from="1579080675693" duration="8605000" />
       <workItem from="1579166716429" duration="9047000" />
+      <workItem from="1579252195557" duration="599000" />
     </task>
     <servers />
   </component>
