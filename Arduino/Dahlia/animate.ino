@@ -20,7 +20,7 @@ uint32_t color      = leds_1.Color(color_r, color_g, color_b);
 ////////////////////////////
 // Pixel count thresholds //
 //////////////////////////// 
-int low_threshold = 28000;
+int low_threshold = 25000;
 int high_threshold = 30000;
 ////////////////
 // Animations //

@@ -80,6 +80,7 @@ class TrackerDepth(object):
             self.updateBin()
             self.updateData()
             self.sendNum()
+            # print(len(self.data))
             cv.imshow("frame", self.bin)
             if cv.waitKey(1) & 0xFF == ord('q'):
                 break
