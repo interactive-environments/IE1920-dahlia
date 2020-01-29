@@ -19,7 +19,7 @@ void out(void) {
 // Getters //
 /////////////
 void get_arm(int i, int arr[]) {
-  for (int j = 0; j < count[i]; j++) {    // Loop through each led in the arm, retrieve the index from the mappeed spiral led array and store in the array arr. Does it not need to return this arr array? and store the result in the arm array?
+  for (int j = 0; j < count[i]; j++) {
     arr[j] = spiral[i][j];
   }
 }
@@ -70,8 +70,8 @@ void set_arm(int i, uint32_t color) {
   } else if (i >= 24) {
     i -= 24;
   }
-  int arm[count[i]];          // Retrieve number of leds in arm
-  get_arm(i, arm);            // Populate arm array with mapped led index.
+  int arm[count[i]];          
+  get_arm(i, arm);            
   for (int led : arm) {
     set_color(led, color);
   }

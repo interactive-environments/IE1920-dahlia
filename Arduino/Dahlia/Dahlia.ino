@@ -66,11 +66,4 @@ void setup() {
 
 void loop() {
   c.feedinSerialData();
-//  idle_0();
-//  idle_1();
-//  idle_2();
-//  sweep();
-//  celebrate_0();
-//  celebrate_1();
-//  celebrate_2();
 }

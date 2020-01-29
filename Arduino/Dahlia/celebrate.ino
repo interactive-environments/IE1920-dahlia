@@ -1,7 +1,7 @@
 ///////////////////////////////
 // Big outward moving circle //
 ///////////////////////////////
-int s_celebrate_0 = 50;
+int s_celebrate_0 = 30;
 int center_celebrate_0 = 3;
 int fade_in_celebrate_0 = 3;
 int fade_out_celebrate_0 = 8;

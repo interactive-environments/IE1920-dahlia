@@ -154,38 +154,7 @@ void sweep(void) {
         set_arm(fade_welcome_2-j, fade);
       }
     }
-//      for (int j = 0; j <= floor((24 + 4*fade_welcome_2 - i)/2); j++) {
-//        uint32_t fade = get_fade(fade_welcome_2 - j, fade_welcome_2);
-//        set_arm(i+j, fade);
-//        set_arm(24 + 4*fade_welcome_2-j, fade);
-//      }
-//    }
     out();
     delay(s_welcome_2);
   }
-  
-  
-  
-   
-//  for (int i = -3; i < 24 ; i++) {
-//    set_all(color);
-//    
-//    if (i <= 0) {
-//      for (int j = 0; j < fade_welcome_2+i; j++) {
-//        
-//        set_arm(j, fade);
-//        set_arm(-j, fade);
-//      }
-//    }
-//    else if (i < 24 - fade_welcome_2) {
-//      fade_arm_left(-fade_welcome_2, fade_welcome_2);
-//      fade_arm_right(i+fade_welcome_2, fade_welcome_2);    
-//    } else {
-//      for (int j = 0; j <= ceil((24 - f_welcome_2)/2); j++) {
-//        uint32_t fade = get_fade(fade_welcome_2 + i - j + 1, fade_welcome_2);
-//        set_arm(i + j, fade);
-//        set_arm(-j, fade);
-//      }
-//    }
-  
 }

@@ -55,7 +55,6 @@ class TrackerDepth(object):
 
     def sendNum(self):
         self.c.send("num", len(self.data))
-        # print(len(self.data))
         block = self.c.receive()
         while (block == None):
             block = self.c.receive()
@@ -80,7 +79,6 @@ class TrackerDepth(object):
             self.updateBin()
             self.updateData()
             self.sendNum()
-            # print(len(self.data))
             cv.imshow("frame", self.bin)
             if cv.waitKey(1) & 0xFF == ord('q'):
                 break
