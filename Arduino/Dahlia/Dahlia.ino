@@ -1,6 +1,6 @@
-////////////////
-// Flew init //
-////////////////
+/////////////////
+// Dahlia init //
+/////////////////
 #include <Adafruit_NeoPixel.h>
 int NUM_1 = 236;
 int NUM_2 = 231;
@@ -36,8 +36,8 @@ int spiral[24][32] =
   { 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, 247, 246, 245, 244, 243, 242, 241, 240, 239, 238, 237, 236,  -1,  -1,  -1,  -1,  -1,  -1},
 };
 
-int pin1 = 5;
-int pin2 = 7;
+int pin1 = 5;   // Edit pin numbers here!
+int pin2 = 7;   // Edit pin numbers here!
 Adafruit_NeoPixel leds_1 = Adafruit_NeoPixel(NUM_1, pin1, NEO_RGB + NEO_KHZ800);
 Adafruit_NeoPixel leds_2 = Adafruit_NeoPixel(NUM_2, pin2, NEO_RGB + NEO_KHZ800);
 

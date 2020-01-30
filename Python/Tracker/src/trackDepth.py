@@ -4,11 +4,11 @@ from pykinect2 import PyKinectRuntime as pkr
 import sys
 import numpy as np
 
-np.set_printoptions(threshold=sys.maxsize)
 import cv2 as cv
 
 import PyCmdMessenger as cmd
 
+np.set_printoptions(threshold=sys.maxsize)
 
 class TrackerDepth(object):
     def __init__(self):
@@ -23,7 +23,9 @@ class TrackerDepth(object):
         self.data = []
 
         # CmdMessenger init
-        arduino = cmd.ArduinoBoard("COM8", baud_rate=9600)
+        port = "COM8"   # Edit the port to which the Arduino is connected here.
+
+        arduino = cmd.ArduinoBoard(port, baud_rate=9600)
         commands = [["coords", "i*"],
                     ["num", "l"],
                     ["unblock", ""]]
@@ -41,8 +43,8 @@ class TrackerDepth(object):
         return np.uint8(self.frame * 0.032)
 
     def updateBin(self):
-        t0 = 1900
-        t1 = 2600
+        t0 = 1900   # Edit the upper threshold of the camera here.
+        t1 = 2600   # Edit the lower threshold of the camera here.
         ret0, bin0 = cv.threshold(self.frame, t0, 127, cv.THRESH_BINARY)
         ret1, bin1 = cv.threshold(self.frame, t1, 127, cv.THRESH_BINARY_INV)
         bin0 = np.uint8(bin0)
@@ -78,6 +80,7 @@ class TrackerDepth(object):
             self.updateFrame()
             self.updateBin()
             self.updateData()
+            # print(len(self.data)) # Uncomment this line for calibration.
             self.sendNum()
             cv.imshow("frame", self.bin)
             if cv.waitKey(1) & 0xFF == ord('q'):
@@ -86,5 +89,4 @@ class TrackerDepth(object):
 
 
 tracker = TrackerDepth()
-tracker.printDim()
 tracker.send()

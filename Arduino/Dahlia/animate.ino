@@ -20,8 +20,8 @@ uint32_t color      = leds_1.Color(color_r, color_g, color_b);
 ////////////////////////////
 // Pixel count thresholds //
 //////////////////////////// 
-int low_threshold = 21500;
-int high_threshold = 30000;
+int low_threshold = 21500;  // Calibrate lower pixel threshold here.
+int high_threshold = 30000; // Calibrate upper pixel threshold here.
 ////////////////
 // Animations //
 ////////////////
