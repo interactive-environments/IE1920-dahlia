@@ -1,5 +1,5 @@
 # DAHLIA
-The DAHLIA project was created for the Interactive Environments minor 2019-2020 at the TU Delft (Delft Univercity of Technology). This repository holds the software which makes  the DAHLIA floor work. The Python code enables a computer to collect depth frames from a Kinect v2 and process them. After processing the frames, it sends data to an Arduino with the Arduino code in this repository installed on it. The Arduino code uses the data it received to display different patterns on the floor.
+The DAHLIA project was created for the Interactive Environments minor 2019-2020 at the TU Delft (Delft University of Technology). This repository holds the software which makes  the DAHLIA floor work. The Python code enables a computer to collect depth frames from a Kinect v2 and process them. After processing the frames, it sends data to an Arduino with the Arduino code in this repository installed on it. The Arduino code uses the data it received to display different patterns on the floor.
 
 ## Getting Started
 These instructions should enable you to set up DAHLIA after the phisical structure has been build. 
