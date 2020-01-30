@@ -30,7 +30,7 @@ If the animations seem a bit funky when the floor is fully set up, you can try t
 Note the port to which the arduino is connected to your computer. This is needed for setting up the Python code.
 
 ### Setting Up the Python Code
-To set up the Python code an IDE which can run Python is necessary, since there is no executable provided for teh code (This should be added in the future if the project is continued). The original project was written using jetbrains PyCharm (https://www.jetbrains.com/pycharm/). 
+To set up the Python code an IDE which can run Python is necessary, since there is no executable provided for the code (This should be added in the future if the project is continued). The original project was written using jetbrains PyCharm (https://www.jetbrains.com/pycharm/). 
 
 Install the following libraries:
 
