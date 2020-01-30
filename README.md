@@ -71,6 +71,9 @@ int high_threshold = 30000; // Calibrate upper pixel threshold here.
 These thresholds mark the borders between the different anmations. These are based on the value sent by the computer to which the Arduino is connected. The lower threshold should be a little higher than the value sent when nobody is on the floor, such that when somebody enters the floor and the value increases it goes over the threshold. The upper threshold should be a little lower then the value when the desired amount of people are on the floor for the celebration to trigger. To find these values you should run the full system with the print line in the python code uncommented. Now you can see the values that are send to the Arduino printed in the terminal. Note the values that are sent when no one is one the floor and when the desired amount of people are on the floor.
 When this is done DAHLIA should be properly calibrated and is ready for use.
 
+## Acknowledgements
+We would like to thank the TU Delft for facilitating this project. Special thanks go to the coaches of the Interactive Environments minor:  Martin Havranek, Aadjan van der Helm, Wouter van der Hoog, Lorenzo Romagnoli and Wim Schermer. 
+
 
 
 
